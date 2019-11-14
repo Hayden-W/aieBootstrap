@@ -4,6 +4,8 @@ project(aieBootstrapProject)
 #TODO: Update to use the target_complile_requires
 set(CMAKE_CXX_STANDARD 14)
 
+cmake_policy(SET CMP0072 OLD)
+
 find_package(OpenGL REQUIRED)
 
 
@@ -16,4 +18,6 @@ add_subdirectory(bootstrap)
 
 
 #PROJECT TO BUILD
+add_subdirectory(nnp)
+add_subdirectory(project2D)
 add_subdirectory(project3D)

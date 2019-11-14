@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hayden/dev/aieBootstrap/bootstrap/gl_core_4_4.c
+stdlib.h
+-
+string.h
+-
+stddef.h
+-
+gl_core_4_4.h
+/home/hayden/dev/aieBootstrap/bootstrap/gl_core_4_4.h
+mach-o/dyld.h
+-
+dlfcn.h
+-
+stdio.h
+-
+GL/glx.h
+-
+
+/home/hayden/dev/aieBootstrap/bootstrap/gl_core_4_4.h
+windows.h
+-
+windows.h
+-
+stddef.h
+-
+inttypes.h
+-
+inttypes.h
+-
+inttypes.h
+-
+stdint.h
+-
+stdint.h
+-
+inttypes.h
+-
+
