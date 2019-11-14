@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-
+#include "glm/vec2.hpp"
 #define USING_2_NODENEURAL_NET true
 
 #define GRID_SIZE 5
@@ -39,7 +39,7 @@ struct MinesweeperNode {
 
 class MinesweeperGame {
 public:
-	MinesweeperGame(int gridX, int gridY, int mineCount);
+	MinesweeperGame(int gridSize, int mineCount, glm::vec2 center);
 	~MinesweeperGame();
 
 	void SetupGrid(int firstX, int firstY);
@@ -69,6 +69,8 @@ private:
 	void PushResultDataToVec(int x, int y); //puts result data into holding vector
 
 	void CheckPushDataToFile(); //flushes training data pairs into a .txt file
+	//Checks if there are any valid moves on the board
+	bool ValidMoveAvailible(std::vector<std::vector<MinesweeperNode*>> input);
 private:
 	std::vector<std::vector<MinesweeperNode*>> nodeGrid;
 
@@ -108,8 +110,10 @@ private:
 
 	std::vector<double> trainingDataHoldingVector;
 	std::vector<double> resultDataHoldingVector;
+	
+	glm::vec2 screenPos;
 
-	int gridSizeX, gridSizeY, maxMines; 
+	int gridSize, maxMines; 
 	int gridXPos = 600, gridYPos = 500, spacing = 16;
 	bool firstClick = true;
 	bool mouseDown = false;

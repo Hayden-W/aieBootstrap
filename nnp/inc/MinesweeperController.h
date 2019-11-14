@@ -14,7 +14,7 @@ namespace aie {
 class MinesweeperController : public Controller
 {
 public:
-	MinesweeperController(int gridSize);
+	MinesweeperController(int gridSize, int mineCount);
 
 	virtual ~MinesweeperController();
 

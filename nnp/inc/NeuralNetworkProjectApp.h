@@ -8,10 +8,9 @@
 struct MinesweeperNode;
 class MinesweeperGame;
 class MinesweeperController;
-class XORController;
-class PatternRecognitionController;
 
-#define GRIDSIZE 5
+#define GRIDSIZE 4 //Don't go below 4, tends to cause an infinite loop
+#define MINECOUNT 3
 #define BINPATH "/home/hayden/dev/aieBootstrap/bin"
 
 class NeuralNetworkProjectApp : public aie::Application {
@@ -32,30 +31,17 @@ protected:
 
 
 	MinesweeperGame* MSgame;
-	MinesweeperController* MSNNController;
-	XORController* XORcontroller;
-	PatternRecognitionController* PatternNNController;																																																						std::function<int()> mfn;
-
-
+	MinesweeperController* MSNNController;																																																						
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
 
 	float avgCorrectness = 0.f;
 
-	bool m_mainMenu = true;
-	bool m_exitMenu = false;
+	bool m_selectMineSweeper = true;
 
 	bool m_userTestMinesweeper = false;
-	bool m_userTestXOR = false;
-	bool m_userTestPattern = false;
 
 	bool m_trainMinesweeper = false;
-	bool m_trainXOR = false;
-	bool m_trainPattern = false;
-
-	bool m_selectMineSweeper = false;
-	bool m_selectXOR = false;
-	bool m_selectPattern = false;
 
 	bool m_testMinesweeperNN = false;
 
