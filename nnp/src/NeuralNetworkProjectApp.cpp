@@ -128,13 +128,13 @@ void NeuralNetworkProjectApp::updateGUI()
 
 		if (ImGui::Button("Load NN Weights"))
 		{
-			std::string path = BINPATH + "NeuralNet/MinesweeperWeights.txt";
+			std::string path = "./bin/NeuralNet/MinesweeperWeights.txt";
 			MSNNController->LoadNeuralNetWeightsFromFile(path.c_str());
 		}
 
 		if (ImGui::Button("Save NN Weights"))
 		{
-			std::string path = BINPATH + "NeuralNet/MinesweeperWeights.txt";
+			std::string path = "./bin/NeuralNet/MinesweeperWeights.txt";
 			MSNNController->SaveNeuralNetWeightsToFile(path.c_str());
 		}
 		ImGui::End();

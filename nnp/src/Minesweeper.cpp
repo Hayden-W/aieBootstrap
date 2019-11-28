@@ -114,33 +114,20 @@ MinesweeperGame::MinesweeperGame(int gridSize, int mineCount, glm::vec2 center) 
 #pragma endregion
 
 	#pragma region Texture bullshit
-	std::string path = std::string(BINPATH + "Tiles/0.png");
-	tileTexture0 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/1.png");
-	tileTexture1 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/2.png");
-	tileTexture2 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/3.png");
-	tileTexture3 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/4.png");
-	tileTexture4 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/5.png");
-	tileTexture5 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/6.png");
-	tileTexture6 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/7.png");
-	tileTexture7 = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/8.png");
-	tileTexture8 = new aie::Texture(path.c_str());
+	tileTexture0 = new aie::Texture("./bin/Tiles/0.png");
+	tileTexture1 = new aie::Texture("./bin/Tiles/1.png");
+	tileTexture2 = new aie::Texture("./bin/Tiles/2.png");
+	tileTexture3 = new aie::Texture("./bin/Tiles/3.png");
+	tileTexture4 = new aie::Texture("./bin/Tiles/4.png");
+	tileTexture5 = new aie::Texture("./bin/Tiles/5.png");
+	tileTexture6 = new aie::Texture("./bin/Tiles/6.png");
+	tileTexture7 = new aie::Texture("./bin/Tiles/7.png");
+	tileTexture8 = new aie::Texture("./bin/Tiles/8.png");
 
-	path = std::string(BINPATH + "Tiles/Pressed.png");
-	tilePressed = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/Closed.png");
-	tileClosed = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/Bomb.png");
-	mineExposed = new aie::Texture(path.c_str());
-	path = std::string(BINPATH + "Tiles/FinalBomb.png");
-	lastMine = new aie::Texture(path.c_str());
+	tilePressed = new aie::Texture("./bin/Tiles/Pressed.png");
+	tileClosed = new aie::Texture("./bin/Tiles/Closed.png");
+	mineExposed = new aie::Texture("./bin/Tiles/Bomb.png");
+	lastMine = new aie::Texture("./bin/Tiles/FinalBomb.png");
 
 	spacing = tileClosed->getWidth();
 
@@ -543,7 +530,7 @@ void MinesweeperGame::CheckPushDataToFile()
 	{
 		std::ofstream trainingDataFile;
 
-		trainingDataFile.open(BINPATH + "NeuralNet/trainingData.txt", std::ios::app);
+		trainingDataFile.open("./bin/NeuralNet/trainingData.txt", std::ios::app);
 		if (trainingDataFile.good())
 		{
 			for (unsigned int i = 0; i < trainingDataHoldingVector.size(); i++)

@@ -11,7 +11,6 @@ class MinesweeperController;
 
 #define GRIDSIZE 4 //Don't go below 4, tends to cause an infinite loop
 #define MINECOUNT 3
-#define BINPATH "/home/hayden/dev/aieBootstrap/bin"
 
 class NeuralNetworkProjectApp : public aie::Application {
 public:

@@ -2,8 +2,6 @@
 #include "Controller.h"
 #include <vector>
 
-#define BINPATH std::string("/home/hayden/dev/aieBootstrap/bin/")
-
 struct MinesweeperNode;
 class MinesweeperGame;
 

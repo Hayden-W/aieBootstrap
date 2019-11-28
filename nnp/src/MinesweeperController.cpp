@@ -12,6 +12,7 @@
 #include <string>
 #include <sstream>
 #include <utility>
+
 MinesweeperController::MinesweeperController(int gridSize, int mineCount) :
 	Controller(((gridSize * gridSize) * 2), ((gridSize * gridSize) * 2),
 	(gridSize * gridSize)), 
@@ -41,7 +42,7 @@ bool MinesweeperController::LoadTrainingDataFromFile()
 	std::vector<double> tempResult;
 	std::ifstream inputDataFile;
 
-	inputDataFile.open(BINPATH + "NeuralNet/trainingData.txt");
+	inputDataFile.open("./bin/NeuralNet/trainingData.txt");
 	if (inputDataFile.good())
 	{
 		while (std::getline(inputDataFile, tempLine))
